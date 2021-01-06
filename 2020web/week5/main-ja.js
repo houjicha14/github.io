@@ -7,7 +7,7 @@ function randomValueFromArray(array){
   return array[random];
 }
 
-let storyText = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
+let storyText = '外は華氏94度だったので、：insertx：は散歩に出かけました。彼らが：inserty：に到達したとき、彼らはしばらくの間恐怖で見つめ、それから：insertz:。ボブはすべてを見ましたが、驚かなかった—：insertx：300ポンドの重さで、暑い日でした';
 let insertX = ['ゴブリン','サンタクロース','エルフ'];
 let insertY = ['炊事','ディズニーランド','ホワイトハウス'];
 let insertZ = ['火事がおきた','歩道の水たまりに溶けた','ナメクジになって這い去った'];
@@ -28,7 +28,7 @@ function result() {
 
   if(customName.value !== '') {
     const name = customName.value;
-    newStory = newStory.replace('Bob',name);
+    newStory = newStory.replace('ボブ',name);
   }
 
   if(document.getElementById("jp").checked) {
