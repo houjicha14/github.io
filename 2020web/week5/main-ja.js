@@ -7,9 +7,9 @@ function randomValueFromArray(array){
   return array[random];
 }
 
-let storyText = '外は華氏94度だったので、：insertx：は散歩に出かけました。彼らが　：inserty：　に到達したとき、彼らはしばらくの間恐怖で見つめ、それから　：insertz:　。ボブはすべてを見ましたが、驚かなかった—　：insertx：　300ポンドの重さで、暑い日でした。';
+let storyText = '外は華氏94度だったので、：insertx：は散歩に出かけました。彼らが：inserty：に到達したとき、彼らはしばらくの間恐怖で見つめ、それから：insertz:。ボブはすべてを見ましたが、驚かなかった—：insertx：300ポンドの重さで、暑い日でした。';
 let insertX = ['ゴブリン','サンタクロース','エルフ'];
-let insertY = ['炊事','ディズニーランド','ホワイトハウス'];
+let insertY = ['スーパーマーケット','ディズニーランド','ホワイトハウス'];
 let insertZ = ['火事がおきた','歩道の水たまりに溶けた','ナメクジになって這い去った'];
 
 randomize.addEventListener('click', result);
@@ -21,7 +21,6 @@ function result() {
   let yItem = randomValueFromArray(insertY);
   let zItem = randomValueFromArray(insertZ);
 
-  newStory = newStory.replace(':insertx:',xItem);
   newStory = newStory.replace(':insertx:',xItem);
   newStory = newStory.replace(':inserty:',yItem);
   newStory = newStory.replace(':insertz:',zItem);
