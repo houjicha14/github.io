@@ -11,20 +11,42 @@
     .box {
       width: 100px;
       height: 100px;
-      background: skyblue;
+      background:  gray;
       cursor: pointer;
       transition: 0.8s;
       margin: 0 8px 8px 0;
       text-align: center;
       line-height: 100px;
     }
-    .win {
+    .daikichi {
       background: pink;
       border-radius: 50%;
       transform: rotate(360deg);
     }
-    .lose {
-      transform: scale(0.9);
+    .chukichi{
+      background: lightsalmon;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+    .shokichi{
+      background: gold;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+    .kichi{
+      background: palegreen;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+    .kyou {
+      background: skyblue;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+    .daikyou{
+      background: plum;
+      border-radius: 50%;
+      transform: rotate(360deg);
     }
   </style>
 </head>
@@ -33,20 +55,51 @@
   <script>
     'use strict';
 
-    const num = 10;
-    const winner = Math.floor(Math.random() * num); // 0 - 4
+    var omikuji = [0,1,2,3,4,5,6,7,8,9];
+    var num = omikuji.length;
+    while(num){
+      var j = Math.floor(Math.random() * num);
+      var t = omikuji[--num];
+      omikuji[num] = omikuji[j];
+      omikuji[j] = t; 
+    }
+    
+    const daikichi = omikuji[0];
+    const chukichi = omikuji[1];
+    const chukichi2 = omikuji[2];
+    const shokichi = omikuji[3];
+    const shokichi2 = omikuji[4];
+    const kyou = omikuji[5];
+    const daikyou = omikuji[6]; 
 
     for (let i = 0; i < num; i++) {
       const div = document.createElement('div');
       div.classList.add('box');
       
       div.addEventListener('click', () => {
-        if (i == winner) {
-          div.textContent = 'Win!';
-          div.classList.add('win');
-        } else {
-          div.textContent = 'Lose!';
-          div.classList.add('lose');
+        if (i == daikichi) {
+          div.textContent = '大吉';
+          div.classList.add('daikichi');
+        }
+        else if(i==chukichi || i==chukichi2){
+          div.textContent = '中吉';
+          div.classList.add('chukichi');
+        }
+        else if(i==shokichi || i==shokichi2){
+          div.textContent = '小吉';
+          div.classList.add('shokichi');
+        }
+        else if(i==kyou){
+          div.textContent = '凶';
+          div.classList.add('kyou');
+        }
+        else if(i == daikyou){
+          div.textContent = '大凶';
+          div.classList.add('daikyou');
+        }
+        else {
+          div.textContent = '吉';
+          div.classList.add('kichi');
         }
       });
 
