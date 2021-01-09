@@ -21,54 +21,56 @@
     .daikichi {
       background: pink;
       border-radius: 50%;
-      transform: rotate(360deg);
+      transform: rotate(720deg);
     }
     .chukichi{
       background: lightsalmon;
-      border-radius: 50%;
+      border-radius: 45%;
       transform: rotate(360deg);
     }
     .shokichi{
       background: gold;
-      border-radius: 50%;
-      transform: rotate(360deg);
+      border-radius: 40%;
     }
     .kichi{
       background: palegreen;
-      border-radius: 50%;
-      transform: rotate(360deg);
+      border-radius: 35%;
+      transform: scale(0.97);
     }
     .kyou {
       background: skyblue;
-      border-radius: 50%;
-      transform: rotate(360deg);
+      border-radius: 30%;
+      transform: scale(0.95);
     }
     .daikyou{
       background: plum;
-      border-radius: 50%;
-      transform: rotate(360deg);
+      border-radius: 15%;
+      transform: scale(0.9);
     }
   </style>
 </head>
-<body>
-
-  <script>
+<body> 
+  <script> 
     'use strict';
 
-    var omikuji = [0,1,2,3,4,5,6,7,8,9];
-    var num = omikuji.length;
-    while(num){
+    const num = 10;
+    var omikuji = new Array(num);
+    for(let i=0; i<num; i++){
+      omikuji[i] = i;
+    }
+
+    for(let i=0; i<num; i++){
       var j = Math.floor(Math.random() * num);
-      var t = omikuji[--num];
-      omikuji[num] = omikuji[j];
+      var t = omikuji[i];
+      omikuji[i] = omikuji[j];
       omikuji[j] = t; 
     }
-    
+			
     const daikichi = omikuji[0];
     const chukichi = omikuji[1];
     const chukichi2 = omikuji[2];
     const shokichi = omikuji[3];
-    const shokichi2 = omikuji[4];
+    const shokichi2 = omikuji[4];	
     const kyou = omikuji[5];
     const daikyou = omikuji[6]; 
 
@@ -105,6 +107,7 @@
 
       document.body.appendChild(div);
     }
+      
   </script>
 </body>
 </html>
